@@ -1,3 +1,5 @@
+"use strict";
+
 // app.controller('detailedCtrl',  ['$scope', '$http', 'Auth',
 //  function ($scope, $http, Auth) {
 //
@@ -9,3 +11,4 @@
 //       }
 //     });
 // newWCS._id
+//# sourceMappingURL=detailedViewCTRL.js.map

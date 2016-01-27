@@ -18,8 +18,7 @@ angular.module('wcsdesktopApp')
       .state('detail', {
         url: '/detailedView',
         templateUrl: 'app/main/detailedView.html',
-        controller: 'detailedCtrl',
-        controllerAs: 'detailedCtrl'
+        controllerAs: 'detailed view'
       })
       .state('customerService', {
         url: '/CS',

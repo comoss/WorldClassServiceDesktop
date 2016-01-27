@@ -26,6 +26,8 @@ var server = http.createServer(app);
 require('./config/express')(app);
 require('./routes')(app);
 
+var Pictoose	= require('pictoose');
+
 // Start server
 function startServer() {
   app.angularFullstack = server.listen(config.port, config.ip, function() {
