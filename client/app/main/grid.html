@@ -1,0 +1,13 @@
+<navbar></navbar>
+<div class='col-sm-3'></div>
+<div class='col-sm-6'>
+<button id="refreshButton" type="button" ng-click='refreshData' class="btn btn-success">Refresh Data</button>  <strong>Calls Pending:</strong> <span ng-bind="callsPending"></span>
+</div>
+<br>
+<br>
+<div ng-controller="GridCtrl"  ng-init="refreshData()">
+  <div id="grid1" ui-grid="gridOptions" ui-grid-cellNav ui-grid-edit ui-grid-resize-columns ui-grid-pinning ui-grid-selection ui-grid-move-columns  ui-grid-exporter ui-grid-grouping ui-grid-pagination class="grid"></div>
+</div>
+<!-- ui-grid-importer -->
+
+<footer></footer>

@@ -1,0 +1,46 @@
+.thing-form {
+  margin: 20px 0;
+}
+
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #F9461C;
+}
+
+.navbar-text {
+  margin-left: 15px;
+}
+
+.grid {
+  width: 80%;
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin {
+  margin-left: 10%;
+}
+
+.CSheader {
+  text-align: center;
+}
+
+#textAreaInput {
+  height: 150px;
+}
