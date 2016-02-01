@@ -7,12 +7,12 @@ var newWCS;
 
 describe('WCS API:', function() {
 
-  describe('GET /api/WCS', function() {
+  describe('GET /api/WCS/', function() {
     var WCSs;
 
     beforeEach(function(done) {
       request(app)
-        .get('/api/WCS')
+        .get('/api/WCS/')
         .expect(200)
         .expect('Content-Type', /json/)
         .end((err, res) => {
@@ -30,10 +30,10 @@ describe('WCS API:', function() {
 
   });
 
-  describe('POST /api/WCS', function() {
+  describe('POST /api/WCS/', function() {
     beforeEach(function(done) {
       request(app)
-        .post('/api/WCS')
+        .post('/api/WCS/')
         .send({
           name: 'New WCS',
           info: 'This is the brand new WCS!!!'

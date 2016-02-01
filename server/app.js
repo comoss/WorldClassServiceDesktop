@@ -1,7 +1,3 @@
-/**
- * Main application file
- */
-
 'use strict';
 
 import express from 'express';
@@ -25,8 +21,6 @@ var app = express();
 var server = http.createServer(app);
 require('./config/express')(app);
 require('./routes')(app);
-
-var Pictoose	= require('pictoose');
 
 // Start server
 function startServer() {

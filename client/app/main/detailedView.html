@@ -1,8 +1,16 @@
 <navbar></navbar>
 
-<!-- <form ng-controller='detailedCtrl'>
-<input type='search'>
-<button type="submit" class="btn btn-block" ng-click="getVOC()">Search</button>
-</form> -->
+<div ng-controller='detailedCtrl' class="">
+  <form >
+    <input ng-model='theId' type='text'>
+    <button type="submit" class="btn btn" ng-click="getVOC()">Search</button>
+  </form>
+</div>
+
+<div ng-repeat='item in detailedData' class="container">
+Name: {{detailedData.name}}
+
+</div>
+
 
 <footer></footer>

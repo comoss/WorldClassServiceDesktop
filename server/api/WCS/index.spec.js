@@ -54,7 +54,7 @@ describe('WCS API Router:', function() {
 
   });
 
-  describe('POST /api/WCS', function() {
+  describe('POST /api/WCS/', function() {
 
     it('should route to WCS.controller.create', function() {
       routerStub.post

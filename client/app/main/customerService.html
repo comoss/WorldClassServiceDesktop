@@ -4,18 +4,15 @@
 <br>
 <br>
 <div class='col-sm-2'></div>
-  <form name="CSForm" class='form-horizontal col-sm-7'>
+  <form name="CSForm"  enctype="multipart/form-data" method="post" class='form-horizontal col-sm-7'>
     <div class='form-group'>
       <label class="col-sm-2 control-label" for="nameInput">Name:</label>
       <div class='col-sm-10'>
         <input class='form-control' ng-model="customer.name" id="nameInput" type='text' placeholder="Name" required="true">
       </div>
-    </div>
-    <div role="alert">
-      <span class="error" ng-show="CSForm.customerName.$error.required">
-       Required!</span>
-       <tt>myForm.userName.$valid = {{CSform.customerName.$valid}}</tt><br/>
-<tt>myForm.userName.$error = {{CSForm.customerName.$error}}</tt><br/>
+      <div role="alert">
+        <span class="error" ng-show="CSForm.customerName.$error.required">Required!</span>
+      </div>
     </div>
     <div class='form-group'>
       <label class="col-sm-2 control-label" for="phoneInput">Phone:</label>
@@ -103,10 +100,10 @@
       </div>
     </div>
     <div class='form-group'>
-      <label class="col-sm-2 control-label" ng-model="customer.file" for="fileInput">Files</label>
+      <label class="col-sm-2 control-label" ng-model="customer.image0" for="fileInput">Images</label>
       <div class='col-sm-10'>
         <input class='form-control' id="fileInput" type='file'>
-        <span id="helpBlock" class="help-block">If you recived any files/images for this case, please upload them.</span>
+        <span id="helpBlock" class="help-block">If you recived any images for this case, please upload them.</span>
       </div>
     </div>
 
