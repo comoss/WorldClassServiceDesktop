@@ -81,7 +81,7 @@
     <div class='form-group'>
       <label class="col-sm-2 control-label"  for="noticeLabelInput">Notice Label Number</label>
       <div class='col-sm-10'>
-        <input class='form-control' id="noticeLabelInput" ng-model="customer.label" type='text' placeholder="Notice Label">
+        <input class='form-control' id="noticeLabelInput" ng-model="customer.noticeLabel" type='text' placeholder="Notice Label">
         <span id="helpBlock" class="help-block">A notice label number typically contains a combination of 5-6 numbers and may contain a letter.</span>
       </div>
     </div>
@@ -93,14 +93,21 @@
       </div>
     </div>
     <div class='form-group'>
-      <label class="col-sm-2 control-label" ng-model="customer.notes" for="textAreaInput">Notes</label>
+      <label class="col-sm-2 control-label"  for="issueInput">Issue</label>
       <div class='col-sm-10'>
-        <textarea class='form-control' id="textAreaInput" type='text' placeholder="Notes"/>
+        <input class='form-control' id="issueInput" ng-model="customer.issue" type='text' placeholder="summarize in a sentence the issue the customer is facing">
+        <!-- <span id="helpBlock" class="help-block">summarize in a sentance the issue the customer is facing.</span> -->
+      </div>
+    </div>
+    <div class='form-group'>
+      <label class="col-sm-2 control-label" for="textAreaInput">Notes</label>
+      <div class='col-sm-10'>
+        <textarea class='form-control' ng-model="customer.notes" id="textAreaInput" type='text' placeholder="Notes"/>
         <span id="helpBlock" class="help-block">Please include any applicable notes about the customers case/situation and what you were able to do to resolve it.</span>
       </div>
     </div>
     <div class='form-group'>
-      <label class="col-sm-2 control-label" ng-model="customer.image0" for="fileInput">Images</label>
+      <label class="col-sm-2 control-label" ng-model="customer.file" for="fileInput">Images</label>
       <div class='col-sm-10'>
         <input class='form-control' id="fileInput" type='file'>
         <span id="helpBlock" class="help-block">If you recived any images for this case, please upload them.</span>

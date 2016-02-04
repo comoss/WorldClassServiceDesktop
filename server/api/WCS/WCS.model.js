@@ -14,6 +14,12 @@ var WCSSchema = new mongoose.Schema({
   notes: String,
   active: Boolean,
   submitter: String,
+  manufactureDate: String,
+  noticeLabel: String,
+  // this doesn not seem to be working, why are there so little examples?
+  file: { data: Buffer, contentType: String}
 });
+
+console.log(WCSSchema.file);
 
 export default mongoose.model('WCS', WCSSchema);

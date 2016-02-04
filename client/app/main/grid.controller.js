@@ -1,5 +1,5 @@
-app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGridConstants', 'uiGridGroupingConstants',
- function ($scope, $http, $timeout, $interval, uiGridConstants, uiGridGroupingConstants) {
+app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGridConstants', 'uiGridGroupingConstants', 'Auth',
+ function ($scope, $http, $timeout, $interval, uiGridConstants, uiGridGroupingConstants, Auth) {
 
   $scope.gridOptions = {};
   $scope.gridOptions.data = 'myData';
@@ -17,11 +17,15 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
     { name:'email', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><a href="mailto:{{COL_FIELD}}">{{COL_FIELD}}</a></div>'},
     { name:'phone', width:150, enableCellEdit: true },
     { name:'product', width:150, enableCellEdit: true },
-    { name:'Issue', width:300, enableCellEdit: true },
-    { name:'Issue Department', width:300, enableCellEdit: true },
+    { name:'issue', width:300, enableCellEdit: true },
+    { name:'manufactureDate', width:300, enableCellEdit: true },
+    { name:'resolutionDepartment', width:300, enableCellEdit: true },
     { name:'notes', width:300, enableCellEdit: true },
-    { name:'Resolution Status', width:200, type:'boolean'},
-    { name:'image0', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"></div>'},
+    //  working on getting the name to link to the submitters email...
+    { name:'submitter', width:300, enableCellEdit: true },
+    { name:'resolutionStatus', width:200, type:'boolean'},
+    { name:'file', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"></div>'},
+    { name:'Delete', width:150, enableCellEdit: false, cellTemplate: '<div ng-click="deleteData()" class="ui-grid-cell-contents btn">Delete</div>'},
   ];
 
   // field:'isActive',
@@ -37,5 +41,4 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
         });
 
   };
-
 }]);
