@@ -21,7 +21,8 @@ var app = angular.module('wcsdesktopApp', [
   'ui.grid.exporter',
   'ui.grid.importer',
   'ui.grid.grouping',
-  'ngMessages'
+  'ngMessages',
+  'ui.grid.pagination'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

@@ -1,3 +1,4 @@
+'use strict';
 app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGridConstants', 'uiGridGroupingConstants', 'Auth',
  function ($scope, $http, $timeout, $interval, uiGridConstants, uiGridGroupingConstants, Auth) {
 
@@ -9,6 +10,9 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
   $scope.gridOptions.showGridFooter = true;
   $scope.gridOptions.showColumnFooter = true;
   $scope.gridOptions.fastWatch = true;
+  $scope.gridOptions.paginationPageSizes = [20, 30, 40];
+  $scope.gridOptions.paginationPageSize = 20;
+
 
   $scope.gridOptions.columnDefs = [
     { name:'_id', width:200 },
@@ -25,7 +29,6 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
     { name:'submitter', width:300, enableCellEdit: true },
     { name:'resolutionStatus', width:200, type:'boolean'},
     { name:'file', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"></div>'},
-    { name:'Delete', width:150, enableCellEdit: false, cellTemplate: '<div ng-click="deleteData()" class="ui-grid-cell-contents btn">Delete</div>'},
   ];
 
   // field:'isActive',
@@ -39,6 +42,5 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
             $scope.myData.push(row);
           });
         });
-
   };
 }]);
