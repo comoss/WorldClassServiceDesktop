@@ -4,44 +4,64 @@
 <br>
 <br>
 <div class='col-sm-2'></div>
-  <form name="CSForm"  enctype="multipart/form-data" method="post" class='form-horizontal col-sm-7'>
-    <div class='form-group'>
+  <form name="CSForm"  enctype="multipart/form-data" method="post" class='form-horizontal col-sm-7' novalidate>
+
+    <div class='form-group'  ng-class="{ 'has-error': CSform.name.$touched && CSForm.name.$invalid, 'has-success': CSform.name.$touched && CSForm.name.$valid }" id='nameId'>
       <label class="col-sm-2 control-label" for="nameInput">Name:</label>
       <div class='col-sm-10'>
-        <input class='form-control' ng-model="customer.name" id="nameInput" type='text' placeholder="Name" required="true">
+        <input class='form-control' name='name'
+          ng-model="customer.name"
+          id="nameInput" type='text'
+          placeholder="Name"
+          ng-minlength='5'
+          required>
       </div>
-      <div role="alert">
-        <span class="error" ng-show="CSForm.customerName.$error.required">Required!</span>
+      <div ng-messages='CSForm.name.$error' ng-if="CSForm.name.$touched">
+        <p ng-message="minlength">Please input both the first and last name.</p>
+        <p ng-message="required">Customer name is required.</p>
       </div>
     </div>
-    <div class='form-group'>
+
+    <div class='form-group'  ng-class="{ 'has-error': CSForm.phone.$touched && CSForm.phone.$invalid, 'has-success': CSForm.phone.$touched && CSForm.phone.$valid }">
       <label class="col-sm-2 control-label" for="phoneInput">Phone:</label>
       <div class='col-sm-10'>
-        <input class='form-control' id="phoneInput" ng-model="customer.phone" type='tel' placeholder="Phone">
+        <input class='form-control' id="phoneInput" ng-model="customer.phone" type='tel' name='phone' placeholder="Phone" required ng-minlength="11">
+      </div>
+      <div ng-messages='CSForm.phone.$error' ng-if="CSForm.phone.$touched">
+        <p ng-message="minlength">Please format phone number like "555-555-5555".</p>
+        <p ng-message="required">a phone number is required.</p>
       </div>
     </div>
-    <div class='form-group'>
+
+    <div class='form-group' ng-class="{ 'has-error': CSForm.email.$touched && CSForm.email.$invalid, 'has-success': CSForm.email.$touched && CSForm.email.$valid }">
       <label class="col-sm-2 control-label" for="emailInput">Email:</label>
       <div class='col-sm-10'>
-        <input class='form-control' id="emailInput" ng-model="customer.email" type='email' placeholder="Email">
+        <input class='form-control' name='email' id="emailInput" ng-model="customer.email" type='email' placeholder="Email" required >
+      </div>
+      <div ng-messages='CSForm.email.$error' ng-if="CSForm.email.$touched">
+        <p ng-message="email">Please input a valid email.</p>
+        <p ng-message="required">a email is required.</p>
       </div>
     </div>
-    <div class='form-group'>
+
+    <!-- <div class='form-group'>
       <label class="col-sm-2 control-label" for="dateInput">Date</label>
       <div class='col-sm-10'>
         <input class='form-control' id="dateInput" ng-model="customer.date" type='date'>
       </div>
-    </div>
+    </div> -->
+
     <div class='form-group'>
       <label class="col-sm-2 control-label" for="companyInput">Company (if Applicable)</label>
       <div class='col-sm-10'>
         <input class='form-control' id="companyInput" ng-model="customer.company" type='text' placeholder="company">
       </div>
     </div>
+
     <div class='form-group'>
-      <label class='col-sm-2 control-label' for="productInput">Product:</label>
-      <div class='col-sm-10'>
-        <select class='form-control col-sm-10' ng-model="customer.product" name="product">
+      <label class='col-sm-2 control-label' ng-class="{ 'has-error': CSform.product.$touched && CSForm.product.$invalid, 'has-success': CSform.product.$touched && CSForm.product.$valid }" for="productInput">Product:</label>
+      <div class='col-sm-10' >
+        <select class='form-control col-sm-10' ng-model="customer.product"  required='true' name="product">
           <option>Accessory</option>
           <option selected>Aerial Safety Cage</option>
           <option>Aircraft Support</option>
@@ -77,7 +97,12 @@
           <option>Xtreme</option>
         </select>
       </div>
+      <div ng-messages='CSForm.product.$error' ng-if="CSForm.product.$touched">
+        <p ng-message="$valid">Please pick a product that this is related to.</p>
+        <p ng-message="required">Product is required.</p>
+      </div>
     </div>
+
     <div class='form-group'>
       <label class="col-sm-2 control-label"  for="noticeLabelInput">Notice Label Number</label>
       <div class='col-sm-10'>
@@ -85,6 +110,7 @@
         <span id="helpBlock" class="help-block">A notice label number typically contains a combination of 5-6 numbers and may contain a letter.</span>
       </div>
     </div>
+
     <div class='form-group'>
       <label class="col-sm-2 control-label" for="manufactureDateInput">Manufacture Date</label>
       <div class='col-sm-10'>
@@ -92,6 +118,7 @@
         <span id="helpBlock" class="help-block">The manufacturing date stamp typically contains a combination of 5-6 numbers and may contain a letter.</span>
       </div>
     </div>
+
     <div class='form-group'>
       <label class="col-sm-2 control-label"  for="issueInput">Issue</label>
       <div class='col-sm-10'>
@@ -99,6 +126,7 @@
         <!-- <span id="helpBlock" class="help-block">summarize in a sentance the issue the customer is facing.</span> -->
       </div>
     </div>
+
     <div class='form-group'>
       <label class="col-sm-2 control-label" for="textAreaInput">Notes</label>
       <div class='col-sm-10'>
@@ -106,6 +134,7 @@
         <span id="helpBlock" class="help-block">Please include any applicable notes about the customers case/situation and what you were able to do to resolve it.</span>
       </div>
     </div>
+
     <div class='form-group'>
       <label class="col-sm-2 control-label" ng-model="customer.file" for="fileInput">Images</label>
       <div class='col-sm-10'>
@@ -114,9 +143,10 @@
       </div>
     </div>
 
-    <button type="submit" ng-click='update(customer)' class="btn btn-block">
+    <button type="submit" ng-disabled="CSForm.$invalid" ng-click='update(customer)' class="btn btn-block">
       Submit
     </button>
+
 </form>
 </div>
 
