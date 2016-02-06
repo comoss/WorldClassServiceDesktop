@@ -10,16 +10,14 @@ var WCSSchema = new mongoose.Schema({
   resolutionDepartment: String,
   issue: String,
   product: String,
-  resolutionStatus: false,
+  resolutionStatus: String,
   notes: String,
   active: Boolean,
   submitter: String,
   manufactureDate: String,
   noticeLabel: String,
-  // this doesn not seem to be working, why are there so little examples?
+  // this doesn not seem to be working, why can't I get it to work? Probably should convert it to a string and then pass it. 
   file: { data: Buffer, contentType: String}
 });
-
-console.log(WCSSchema.file);
 
 export default mongoose.model('WCS', WCSSchema);
