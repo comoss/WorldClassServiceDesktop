@@ -8,15 +8,19 @@ var WCSSchema = new mongoose.Schema({
   date: Date,
   email: String,
   resolutionDepartment: String,
+  company: String,
   issue: String,
   product: String,
   resolutionStatus: String,
   notes: String,
   active: Boolean,
   submitter: String,
+  submitterEmail: String,
+  submitterPhone: String,
   manufactureDate: String,
   noticeLabel: String,
-  // this doesn not seem to be working, why can't I get it to work? Probably should convert it to a string and then pass it. 
+  assignedAgent: String,
+  // this doesn not seem to be working, why can't I get it to work? Probably should convert it to a string and then pass it.
   file: { data: Buffer, contentType: String}
 });
 

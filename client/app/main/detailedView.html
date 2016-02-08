@@ -11,12 +11,111 @@
   </form>
 </div>
 
-id = {{details._id}}
-Name = {{details.name}}
-Email = {{details.email}}
-<br>
-<!-- <input type="button" ng-model='details.name' name="name" value=""> -->
+<table class="col col-sm-4">
+<tr>
+  <td>
+     id:
+  </td>
+  <td>
+    {{details._id}}
+  </td>
+</tr>
+<tr>
+  <td>
+    Name:
+  </td>
+  <td>
+    {{details.name}}
+  </td>
+</tr>
+<tr>
+  <td>
+    Email:
+  </td>
+  <td>
+  {{details.email}}
+  </td>
+</tr>
+<tr>
+  <td>
+    Company:
+  </td>
+  <td>
+  {{details.company}}
+  </td>
+</tr>
+<tr>
+  <td>
+    Assigned Agent:
+  </td>
+  <td>
+  {{details.agent}}
+  </td>
+</tr>
+<tr>
+  <td>
+    Status:
+  </td>
+  <td>
+  {{details.resolutionStatus}}
+  </td>
+</tr>
+</table>
 
+<table class='col col-sm-4'>
+  <tr>
+    <td>
+      Product:
+    </td>
+    <td>
+    {{details.product}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+
+      Manufacture Date:
+    </td>
+    <td>
+    {{details.manufactureDate}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Notice label:
+    </td>
+    <td>
+    {{details.noticeLabel}}
+    </td>
+  </tr>
+</table>
+
+<table class="col col-sm-4">
+  <tr>
+    <td>
+      submitter:
+    </td>
+    <td>
+    {{details.submitter}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Notice label:
+    </td>
+    <td>
+    {{details.submitterEmail}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Notice label:
+    </td>
+    <td>
+    {{details.submitterPhone}}
+    </td>
+  </tr>
+</table>
 
 </div>
 <footer></footer>

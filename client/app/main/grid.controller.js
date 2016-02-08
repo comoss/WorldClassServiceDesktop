@@ -21,6 +21,7 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
     { name:'email', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><a href="mailto:{{COL_FIELD}}">{{COL_FIELD}}</a></div>'},
     { name:'phone', width:150, enableCellEdit: true },
     { name:'product', width:150, enableCellEdit: true },
+    { name:'company', width:300, enableCellEdit: true },
     { name:'issue', width:300, enableCellEdit: true },
     { name:'manufactureDate', width:300, enableCellEdit: true },
     { name:'resolutionDepartment', width:300, enableCellEdit: true },
@@ -28,7 +29,8 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
     //  working on getting the name to link to the submitters email...
     { name:'submitter', width:300, enableCellEdit: true },
     { name:'resolutionStatus', width:200, type:'boolean'},
-    { name:'file', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"></div>'},
+    { name:'assignedAgent', width:200, type:'boolean'},
+    // { name:'file', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"></div>'},
   ];
 
   // field:'isActive',
