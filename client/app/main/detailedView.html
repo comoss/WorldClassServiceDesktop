@@ -1,9 +1,9 @@
 <navbar></navbar>
 
-<div class="container">
+<div class="container" ng-controller='detailedCtrl'>
 
 
-<div ng-controller='detailedCtrl' class="">
+<div>
   <form >
     <input ng-model='theId' type='text'>
     <button type="submit" class="btn btn" ng-click="getVOC()">Search</button>
@@ -11,10 +11,12 @@
   </form>
 </div>
 
-<div ng-controller='detailedCtrl' class="container">
-Name: {{detailedData.name}}
-id: {{detailedData._id}}
-</div>
+id = {{details._id}}
+Name = {{details.name}}
+Email = {{details.email}}
+<br>
+<!-- <input type="button" ng-model='details.name' name="name" value=""> -->
+
 
 </div>
 <footer></footer>

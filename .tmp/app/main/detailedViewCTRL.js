@@ -1,16 +1,19 @@
 'use strict';
 app.controller('detailedCtrl', ['$scope', '$http', 'Auth', function ($scope, $http, Auth) {
 
+  // Search
   $scope.theId = '';
 
+  // Pull function
   $scope.getVOC = function () {
-    $scope.detailedData = [];
-    // Pull working
     if ($scope.theId.length === 24) {
       $http.get('http://localhost:9000/api/WCS/' + $scope.theId).success(function (data) {
-        console.log(data);
-        console.log($scope.detailedData);
+        $scope.details = data;
+        console.log($scope.details);
+        console.log('name ' + $scope.details.name);
       });
+    } else {
+      alert('Please use an existing ID.');
     }
   };
 
