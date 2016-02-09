@@ -6,9 +6,37 @@
     <li class="list-group-item" ng-repeat="user in admin.users">
 	    <div class="user-info">
 	        <strong>{{user.name}}</strong><br>
-	        <span class="text-muted">{{user.email}}</span>
+	        <a class="text-muted" href="mailto:{{user.email}}"> {{user.email}}</a>
+          <p class="text-muted">{{user._id}}</p>
+          <div class="col-sm-4">
+            Role:
+            <select class='form-control col-sm-2' ng-model="user.role" >
+              <option>admin</option>
+              <option>user</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            Department:
+            <select class='form-control' ng-model="user.department" >
+              <option>Customer Service</option>
+              <option>Dealer Customer Service</option>
+            </select>
+          </div>
 	    </div>
-        <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+      <table>
+        <tr>
+          <a ng-click="admin.update(user)" class="update"><span class="fa fa-refresh fa-2x"></span></a>
+        </tr>
+        <tr>
+          <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+        </tr>
+      </table>
+
+
     </li>
   </ul>
 </div>
+
+<!-- <div class='col-sm-4' >
+
+</div> -->

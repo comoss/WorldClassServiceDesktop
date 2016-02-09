@@ -10,18 +10,19 @@
     <button type="button" class='btn' ng-click='deleteData()' name="button">Delete</button>
   </form>
 </div>
-
-<table class="col col-sm-4">
-<tr>
-  <td>
+<br>
+<table class="table table-hover table-bordered">
+<h4>Customer Information</h4>
+<!-- <tr>
+  <td >
      id:
   </td>
   <td>
     {{details._id}}
   </td>
-</tr>
+</tr> -->
 <tr>
-  <td>
+  <td class="col-sm-2">
     Name:
   </td>
   <td>
@@ -38,6 +39,14 @@
 </tr>
 <tr>
   <td>
+    Phone:
+  </td>
+  <td>
+  {{details.phone}}
+  </td>
+</tr>
+<tr>
+  <td>
     Company:
   </td>
   <td>
@@ -49,7 +58,11 @@
     Assigned Agent:
   </td>
   <td>
-  {{details.agent}}
+    <select ng-repeat='user in admin.users' class='form-control col-sm-2' >
+      <option>{{user.name}}</option>
+
+    </select>
+  <!-- {{details.agent}} -->
   </td>
 </tr>
 <tr>
@@ -57,14 +70,19 @@
     Status:
   </td>
   <td>
-  {{details.resolutionStatus}}
+    <select class='form-control col-sm-2' ng-model="details.resolutionStatus" >
+      <option>resolved</option>
+      <option>unresolved</option>
+    </select>
+  <!-- {{details.resolutionStatus}} -->
   </td>
 </tr>
 </table>
 
-<table class='col col-sm-4'>
+<table class='table table-bordered table-hover'>
+<h4>Product Information</h4>
   <tr>
-    <td>
+    <td class="col-sm-2">
       Product:
     </td>
     <td>
@@ -73,7 +91,6 @@
   </tr>
   <tr>
     <td>
-
       Manufacture Date:
     </td>
     <td>
@@ -90,10 +107,11 @@
   </tr>
 </table>
 
-<table class="col col-sm-4">
+<table class="table table-bordered table-hover">
+<h4>Submitter Information</h4>
   <tr>
-    <td>
-      submitter:
+    <td class="col-sm-2">
+      Submitter:
     </td>
     <td>
     {{details.submitter}}
@@ -101,18 +119,10 @@
   </tr>
   <tr>
     <td>
-      Notice label:
+      Submitter Email:
     </td>
     <td>
     {{details.submitterEmail}}
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Notice label:
-    </td>
-    <td>
-    {{details.submitterPhone}}
     </td>
   </tr>
 </table>

@@ -13,7 +13,7 @@ angular.module('wcsdesktopApp').config(function ($stateProvider, $urlRouterProvi
     controller: function controller($state, Auth) {
       var referrer = $state.params.referrer || $state.current.referrer || 'main';
       Auth.logout();
-      $state.go(referrer);
+      $state.go('logoutPage');
     }
   }).state('signup', {
     url: '/signup',

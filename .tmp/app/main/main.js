@@ -21,6 +21,9 @@ angular.module('wcsdesktopApp').config(function ($stateProvider) {
     templateUrl: 'app/main/customerService.html',
     controller: 'CSCtrl',
     controllerAs: 'CSCtrl'
+  }).state('logoutPage', {
+    url: '/logout',
+    templateUrl: 'app/main/logout.html'
   });
 });
 //# sourceMappingURL=main.js.map

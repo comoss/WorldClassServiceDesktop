@@ -18,7 +18,7 @@ angular.module('wcsdesktopApp')
                           $state.current.referrer ||
                           'main';
           Auth.logout();
-          $state.go(referrer);
+          $state.go('logoutPage');
         }
       })
       .state('signup', {

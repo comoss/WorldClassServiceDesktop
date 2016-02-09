@@ -26,5 +26,9 @@ angular.module('wcsdesktopApp')
         templateUrl: 'app/main/customerService.html',
         controller: 'CSCtrl',
         controllerAs: 'CSCtrl'
+      })
+      .state('logoutPage', {
+        url: '/logout',
+        templateUrl: 'app/main/logout.html',
       });
   });

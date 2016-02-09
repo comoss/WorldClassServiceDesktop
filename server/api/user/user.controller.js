@@ -9,7 +9,7 @@ function validationError(res, statusCode) {
   statusCode = statusCode || 422;
   return function(err) {
     res.status(statusCode).json(err);
-  }
+  };
 }
 
 function handleError(res, statusCode) {
