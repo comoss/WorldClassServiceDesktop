@@ -12,6 +12,9 @@ function UserResource($resource) {
         controller: 'password'
       }
     },
+    update: {
+      method: 'PUT'
+    },
     get: {
       method: 'GET',
       params: {
