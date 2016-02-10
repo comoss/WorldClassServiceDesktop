@@ -2,5 +2,5 @@
 
 angular.module('wcsdesktopApp.admin', [
   'wcsdesktopApp.auth',
-  'ui.router'
+  'ui.router',
 ]);

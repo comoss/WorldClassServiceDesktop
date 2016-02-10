@@ -19,7 +19,7 @@ app.controller('detailedCtrl',  ['$scope', '$http', 'Auth', function ($scope, $h
   };
 
     // Delete an array, permission granted when user role is admin.
-  $scope.deleteData = function() {
+  $scope.deleteData = function () {
     if (Auth.getCurrentUser().role === 'admin' && $scope.theId.length === 24) {
       $http.delete('http://localhost:9000/api/WCS/' + $scope.theId);
     }
