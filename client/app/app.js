@@ -7,6 +7,7 @@ var app = angular.module('wcsdesktopApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
+  'ngRoute',
   'ui.router',
   'ui.bootstrap',
   'validation.match',

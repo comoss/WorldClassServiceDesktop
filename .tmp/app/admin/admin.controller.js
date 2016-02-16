@@ -6,12 +6,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 (function () {
   var AdminController = (function () {
-    function AdminController(User) {
+    function AdminController(User, Auth) {
       _classCallCheck(this, AdminController);
 
       // Use the User $resource to fetch all users
       this.users = User.query();
-      console.log(User.query());
+
+      this.Auth = Auth;
     }
 
     _createClass(AdminController, [{
@@ -20,14 +21,16 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         user.$remove();
         this.users.splice(this.users.indexOf(user), 1);
       }
+
+      // not working
     }, {
       key: 'update',
-      value: function update(user) {
-        // when I press the update button, it shows in the console that the changes happened. I, however, have no idea how to save the
+      value: function update(user, User, $scope, $role) {
+        $role = updated.role;
 
-        user.$update({ role: user.role }, user);
-        console.log(user);
-        // console.log(this.users);
+        user.$update({ role: $role }, user);
+
+        console.log(this.users);
       }
     }]);
 

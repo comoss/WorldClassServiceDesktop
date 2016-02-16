@@ -3,10 +3,12 @@
 (function () {
 
 class AdminController {
-  constructor(User) {
+  constructor(User, Auth) {
     // Use the User $resource to fetch all users
     this.users = User.query();
-    console.log(User.query());
+
+    this.Auth = Auth;
+
   }
 
   delete(user) {
@@ -14,12 +16,13 @@ class AdminController {
     this.users.splice(this.users.indexOf(user), 1);
   }
 
-  update(user) {
-    // when I press the update button, it shows in the console that the changes happened. I, however, have no idea how to save the
+// not working
+  update(user, User, $scope, $role) {
+    $role = updated.role;
 
-    user.$update({ role:user.role}, user);
-    console.log(user);
-    // console.log(this.users);
+    user.$update({ role:$role }, user);
+
+    console.log(this.users);
   }
 }
 

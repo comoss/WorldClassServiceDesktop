@@ -1,8 +1,10 @@
 'use strict';
-app.controller('detailedCtrl',  ['$scope', '$http', 'Auth', function ($scope, $http, Auth) {
+app.controller('detailedCtrl',  ['$scope', '$http', 'Auth', 'updateService', '$routeParams', '$window', '$resource', function ($scope, $http, Auth, updateService, $routeParams, $window, $resource, data) {
 
 // Search
   $scope.theId = '';
+
+  $scope.details = {};
 
 // Pull function
   $scope.getVOC = function () {
@@ -10,19 +12,48 @@ app.controller('detailedCtrl',  ['$scope', '$http', 'Auth', function ($scope, $h
       $http.get('http://localhost:9000/api/WCS/' + $scope.theId)
         .success(function(data) {
           $scope.details = data;
-          console.log($scope.details);
-          console.log('name ' + $scope.details.name);
         });
     } else {
       alert('Please use an existing ID.');
     }
   };
 
+  // Put function
+  $scope.updateVOC = function () {
+    //  var data = $http.get('http://localhost:9000/api/WCS/' + $scope.theId);
+
+     var $id = $scope.theId;
+
+     var data = $scope.details;
+
+     updateService.update({ id:$id }, data);
+
+  };
+
+
+
+
+
+  // $scope.doneEditing = function (id) {
+  //     $scope.editedTodo = null;
+  //     var title = $scope.todos[id].title.trim();
+  //     if (title) {
+  //       $scope.todos[id].$update();
+  //     } else {
+  //       $scope.removeTodo(id);
+  //     }
+  //   };
+
+
+
+
     // Delete an array, permission granted when user role is admin.
   $scope.deleteData = function () {
     if (Auth.getCurrentUser().role === 'admin' && $scope.theId.length === 24) {
-      $http.delete('http://localhost:9000/api/WCS/' + $scope.theId);
+      if($window.confirm('Really Delete?')) {
+          $http.delete('http://localhost:9000/api/WCS/' + $scope.theId);
+      }
     }
-  };
+};
 
 }]);

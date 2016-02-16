@@ -31,6 +31,7 @@
    };
  }
 
+
  function removeEntity(res) {
    return function(entity) {
      if (entity) {

@@ -76,6 +76,19 @@ export function destroy(req, res) {
     .catch(handleError(res));
 }
 
+
+export function update(req, res) {
+  User.findById(req.params.id)
+    .then(function() {
+      user.saveAsync();
+      res.status(204).end();
+    })
+    .catch(handleError(res));
+}
+
+
+
+
 /**
  * Change a users password
  */
@@ -98,6 +111,7 @@ export function changePassword(req, res, next) {
       }
     });
 }
+
 
 /**
  * Get my info

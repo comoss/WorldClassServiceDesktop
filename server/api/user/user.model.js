@@ -43,8 +43,6 @@ UserSchema
   .get(function() {
     return {
       '_id': this._id,
-      'role': this.role,
-      'department': this.department
     };
   });
 
