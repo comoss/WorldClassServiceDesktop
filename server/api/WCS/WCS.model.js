@@ -20,6 +20,7 @@ var WCSSchema = new mongoose.Schema({
   manufactureDate: String,
   noticeLabel: String,
   assignedAgent: String,
+  orderNumber:String,
   // this doesn not seem to be working, why can't I get it to work? Probably should convert it to a string and then pass it.
   file: { data: Buffer, contentType: String}
 });

@@ -76,11 +76,14 @@ export function destroy(req, res) {
     .catch(handleError(res));
 }
 
-
+ // not working .........
 export function update(req, res) {
-  User.findById(req.params.id)
+  var userId = req.user._id;
+  var role = String(req.body.role);
+
+  User.findByIdAsync(userId)
     .then(function() {
-      user.saveAsync();
+     return user.saveAsync(role);
       res.status(204).end();
     })
     .catch(handleError(res));

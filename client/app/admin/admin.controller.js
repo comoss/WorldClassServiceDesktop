@@ -17,12 +17,19 @@ class AdminController {
   }
 
 // not working
-  update(user, User, $scope, $role) {
-    $role = updated.role;
+  update(user, User, userUpdateService) {
 
-    user.$update({ role:$role }, user);
+    var $id = user._id;
 
-    console.log(this.users);
+    console.log(user._id);
+
+    User.update({id:$id}, user);
+
+    // user.update({ id:$id }, user);
+
+      // this.Auth.changePassword(this.user.oldPassword, this.user.newPassword)
+
+
   }
 }
 

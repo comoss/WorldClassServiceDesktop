@@ -7,10 +7,10 @@ app.controller('CSCtrl', ['$scope', '$http', 'Auth', function ($scope, $http, Au
 // Need to submit files, fix issues with schema, such as upload image/file
 // Reset form!
   $scope.update = function(customer) {
+
       $scope.master = angular.copy(customer);
       $scope.master.submitter = Auth.getCurrentUser().name;
       $scope.master.submitterEmail = Auth.getCurrentUser().email;
-      $scope.master.submitterPhone = Auth.getCurrentUser().phone;
       $scope.master.resolutionDepartment = 'Customer Service';
       $scope.master.date = new Date();
       $scope.master.resolutionStatus = 'unresolved';

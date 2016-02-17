@@ -84,6 +84,16 @@ describe('User API Router:', function() {
 
   });
 
+  describe('PUT /api/users/:id', function () {
+    it('should be authenticated and route to user.controller.update', function () {
+      routerStub.put
+      .withArgs('/:id',
+    'authService.isAuthenticated')
+    .should.have.been.called.Once;
+  });
+});
+
+
   describe('GET /api/users/:id', function() {
 
     it('should be authenticated and route to user.controller.show', function() {

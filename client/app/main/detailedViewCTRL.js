@@ -20,7 +20,6 @@ app.controller('detailedCtrl',  ['$scope', '$http', 'Auth', 'updateService', '$r
 
   // Put function
   $scope.updateVOC = function () {
-    //  var data = $http.get('http://localhost:9000/api/WCS/' + $scope.theId);
 
      var $id = $scope.theId;
 
@@ -30,23 +29,6 @@ app.controller('detailedCtrl',  ['$scope', '$http', 'Auth', 'updateService', '$r
 
   };
 
-
-
-
-
-  // $scope.doneEditing = function (id) {
-  //     $scope.editedTodo = null;
-  //     var title = $scope.todos[id].title.trim();
-  //     if (title) {
-  //       $scope.todos[id].$update();
-  //     } else {
-  //       $scope.removeTodo(id);
-  //     }
-  //   };
-
-
-
-
     // Delete an array, permission granted when user role is admin.
   $scope.deleteData = function () {
     if (Auth.getCurrentUser().role === 'admin' && $scope.theId.length === 24) {
@@ -55,5 +37,14 @@ app.controller('detailedCtrl',  ['$scope', '$http', 'Auth', 'updateService', '$r
       }
     }
 };
+
+  $scope.editItem = function (details) {
+        details.editing = true;
+    };
+
+  $scope.doneEditing = function (details) {
+      details.editing = false;
+      //dong some background ajax calling for persistence...
+  };
 
 }]);

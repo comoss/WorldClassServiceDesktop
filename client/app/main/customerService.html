@@ -7,7 +7,7 @@
   <form name="CSForm"  enctype="multipart/form-data" method="post" class='form-horizontal col-sm-7' novalidate>
 
     <div class='form-group'  ng-class="{ 'has-error': CSform.name.$touched && CSForm.name.$invalid, 'has-success': CSform.name.$touched && CSForm.name.$valid }" id='nameId'>
-      <label class="col-sm-2 control-label" for="nameInput">Name:</label>
+      <label class="col-sm-2 control-label required" for="nameInput">Name:</label>
       <div class='col-sm-10'>
         <input class='form-control' name='name'
           ng-model="customer.name"
@@ -23,7 +23,7 @@
     </div>
 
     <div class='form-group'  ng-class="{ 'has-error': CSForm.phone.$touched && CSForm.phone.$invalid, 'has-success': CSForm.phone.$touched && CSForm.phone.$valid }">
-      <label class="col-sm-2 control-label" for="phoneInput">Phone:</label>
+      <label class="col-sm-2 control-label required" for="phoneInput">Phone:</label>
       <div class='col-sm-10'>
         <input class='form-control' id="phoneInput" ng-model="customer.phone" type='tel' name='phone' placeholder="Phone" required ng-minlength="11">
       </div>
@@ -34,9 +34,9 @@
     </div>
 
     <div class='form-group' ng-class="{ 'has-error': CSForm.email.$touched && CSForm.email.$invalid, 'has-success': CSForm.email.$touched && CSForm.email.$valid }">
-      <label class="col-sm-2 control-label" for="emailInput">Email:</label>
+      <label class="col-sm-2 control-label required" for="emailInput">Email:</label>
       <div class='col-sm-10'>
-        <input class='form-control' name='email' id="emailInput" ng-model="customer.email" type='email' placeholder="Email" required >
+        <input class='form-control required' name='email' id="emailInput" ng-model="customer.email" type='email' placeholder="Email" required >
       </div>
       <div ng-messages='CSForm.email.$error' ng-if="CSForm.email.$touched">
         <p ng-message="email">Please input a valid email.</p>
@@ -59,7 +59,7 @@
     </div>
 
     <div class='form-group'>
-      <label class='col-sm-2 control-label' ng-class="{ 'has-error': CSform.product.$touched && CSForm.product.$invalid, 'has-success': CSform.product.$touched && CSForm.product.$valid }" for="productInput">Product:</label>
+      <label class='col-sm-2 control-label required' ng-class="{ 'has-error': CSform.product.$touched && CSForm.product.$invalid, 'has-success': CSform.product.$touched && CSForm.product.$valid }" for="productInput">Product:</label>
       <div class='col-sm-10' >
         <select class='form-control col-sm-10' ng-model="customer.product"  required='true' name="product">
           <option>Accessory</option>
@@ -116,6 +116,14 @@
       <div class='col-sm-10'>
         <input class='form-control' ng-model="customer.manufactureDate" id="manufactureDateInput" type='text' placeholder="Manufacture Date">
         <span id="helpBlock" class="help-block">The manufacturing date stamp typically contains a combination of 5-6 numbers and may contain a letter.</span>
+      </div>
+    </div>
+
+    <div class='form-group'>
+      <label class="col-sm-2 control-label" for="orderNumberInput">Order Number</label>
+      <div class='col-sm-10'>
+        <input class='form-control' ng-model="customer.orderNumber" id="orderNumberInput" type='text' placeholder="Order Number">
+        <span id="helpBlock" class="help-block">The order number.</span>
       </div>
     </div>
 
