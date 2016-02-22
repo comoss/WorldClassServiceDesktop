@@ -1,10 +1,12 @@
 'use strict';
-app.controller('detailedCtrl',  ['$scope', '$http', 'Auth', 'updateService', '$routeParams', '$window', '$resource', function ($scope, $http, Auth, updateService, $routeParams, $window, $resource, data) {
+app.controller('detailedCtrl',  ['$scope', '$http', 'Auth', 'updateService', '$window', 'User', function ($scope, $http, Auth, updateService, $window, User, data) {
 
 // Search
   $scope.theId = '';
 
   $scope.details = {};
+
+  $scope.users = User.query();
 
 // Pull function
   $scope.getVOC = function () {
@@ -20,13 +22,9 @@ app.controller('detailedCtrl',  ['$scope', '$http', 'Auth', 'updateService', '$r
 
   // Put function
   $scope.updateVOC = function () {
-
      var $id = $scope.theId;
-
      var data = $scope.details;
-
      updateService.update({ id:$id }, data);
-
   };
 
     // Delete an array, permission granted when user role is admin.

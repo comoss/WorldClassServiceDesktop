@@ -9,7 +9,7 @@ var genUser = function() {
     name: 'Fake User',
     email: 'test@example.com',
     password: 'password',
-    department: '',
+    department: 'foo department',
   });
   return user;
 };

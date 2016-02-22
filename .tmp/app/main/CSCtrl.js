@@ -1,5 +1,5 @@
 'use strict';
-app.controller('CSCtrl', ['$scope', '$http', 'Auth', function ($scope, $http, Auth) {
+app.controller('CSCtrl', ['$scope', '$http', 'Auth', 'User', function ($scope, $http, Auth, User) {
 
     $scope.master = {};
 
@@ -14,8 +14,7 @@ app.controller('CSCtrl', ['$scope', '$http', 'Auth', function ($scope, $http, Au
         $scope.master.date = new Date();
         $scope.master.resolutionStatus = 'unresolved';
         $scope.master.assignedAgent = 'unassigned';
-        //  this is not working.
-        // $scope.master.file = 'data:image/jpeg;base64;'+ customer.file;
+        console.log($scope.customer.file);
         $http.post('http://localhost:9000/api/WCS/', $scope.master).success(function () {
             alert('Success!');
         }).error(function () {

@@ -2,7 +2,7 @@
 
 (function() {
 
-function UserResource($resource) {
+function User($resource) {
   return $resource('/api/users/:id/:controller', {
     id: '@_id'
   }, {
@@ -12,12 +12,9 @@ function UserResource($resource) {
         controller: 'password'
       }
     },
-    // update: {
-    //   method: 'PUT'
-    //   // params: {
-    //   //   controller: 'role'
-    //   // }
-    // },
+    update: {
+      method: 'PUT',
+    },
     get: {
       method: 'GET',
       params: {
@@ -28,6 +25,5 @@ function UserResource($resource) {
 }
 
 angular.module('wcsdesktopApp.auth')
-  .factory('User', UserResource);
-
+  .factory('User', User);
 })();

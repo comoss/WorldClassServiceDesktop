@@ -29,6 +29,7 @@ var SignupController = (function () {
         this.Auth.createUser({
           name: this.user.name,
           email: this.user.email,
+          department: this.user.department,
           password: this.user.password
         }).then(function () {
           // Account created, redirect to home

@@ -89,8 +89,8 @@
     Assigned Agent:
   </td>
   <td>
-    <select ng-repeat='user in admin.users' class='form-control col-sm-2' >
-      <option>{{user.name}}</option>
+    <select class='form-control col-sm-2' ng-model='details.assignedAgent'>
+      <option ng-repeat='user in users | orderBy:"name"'>{{user.name}}</option>
     </select>
   <!-- {{details.agent}} -->
   </td>

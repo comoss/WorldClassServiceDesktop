@@ -34,7 +34,8 @@ describe('User API:', function() {
         .post('/auth/local')
         .send({
           email: 'test@example.com',
-          password: 'password'
+          password: 'password',
+          department: 'Customer Service'
         })
         .expect(200)
         .expect('Content-Type', /json/)
