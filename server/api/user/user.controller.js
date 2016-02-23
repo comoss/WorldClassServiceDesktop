@@ -4,6 +4,7 @@ import User from './user.model';
 import passport from 'passport';
 import config from '../../config/environment';
 import jwt from 'jsonwebtoken';
+import _ from 'lodash';
 
 function validationError(res, statusCode) {
   statusCode = statusCode || 422;
@@ -105,20 +106,17 @@ export function destroy(req, res) {
     .catch(handleError(res));
 }
 
+// Update User
 export function updateUser(req, res) {
   if (req.body._id) {
     delete req.body._id;
   }
-User.findByIdAndUpdate(req.params.id)
+User.findByIdAsync(req.params.id)
     .then(handleEntityNotFound(res))
     .then(saveUpdates(req.body))
     .then(respondWithResult(res))
     .catch(handleError(res));
     }
-    // .then(handleEntityNotFound(res))
-    // .then(respondWithResult(res))
-    // .catch(handleError(res));
-// }
 
 
 /**
