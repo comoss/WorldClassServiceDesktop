@@ -27,7 +27,7 @@ var app = angular.module('wcsdesktopApp', [
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
-      .otherwise('/main');
+      .otherwise('/404');
 
     $locationProvider.html5Mode(true);
   });

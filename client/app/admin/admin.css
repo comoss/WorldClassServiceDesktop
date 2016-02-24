@@ -17,3 +17,14 @@
 	align-items: center;
 	text-decoration: none;
 }
+.padding{
+	display: inline-block;
+	margin: 3em 1em 0em 1em;
+}
+.search{
+	float: right;
+	display: inline-block;
+}
+/**{
+	border: 1px solid red !important;
+}*/

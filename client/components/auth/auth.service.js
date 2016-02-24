@@ -171,6 +171,18 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
     },
 
     /**
+     * Check if a user has a user role
+     *   (synchronous|asynchronous)
+     *
+     * @param  {Function|*} callback - optional, function(is)
+     * @return {Bool|Promise}
+     */
+    isUser() {
+      return Auth.hasRole
+        .apply(Auth, [].concat.apply(['user'], arguments));
+    },
+    
+    /**
      * Get auth token
      *
      * @return {String} - a token string used for authenticating

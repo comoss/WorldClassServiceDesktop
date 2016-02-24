@@ -16,6 +16,7 @@ function NavbarController(Auth) {
   this.isLoggedIn = Auth.isLoggedIn;
   this.isAdmin = Auth.isAdmin;
   this.getCurrentUser = Auth.getCurrentUser;
+  this.isUser = Auth.isUser;
 };
 
 angular.module('wcsdesktopApp').controller('NavbarController', NavbarController);
