@@ -1,0 +1,22 @@
+<navbar></navbar>
+
+<div class="container">
+
+  <div class="authorization" ng-hide="user.role == 'user'">
+    <h4>{{user.name}}, welcome back!!!</h4>
+    <br><br>
+    <img class='img-thumbnail' src="https://media.giphy.com/media/q6QHDGE3X4EWA/giphy.gif"/>
+  </div>
+
+  <div class="authorization" ng-show="user.role == 'user'">
+    <h4>Thank you for signing up! The site admin is reviewing your status. </h4>
+    <br><br>
+      <img src="http://memecreator.org/static/images/memes/3899221.jpg" class='img-thumbnail' alt="Koalafications" />
+      <br><br>
+    <h4>Once your connection with Little Giant Ladders has been verified you may visit other parts of website</h4>
+  </div>
+
+</div>
+
+
+<footer></footer>

@@ -171,7 +171,7 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
     },
 
     /**
-     * Check if a user has a user role
+     * Check if a user has been promoted to employee
      *   (synchronous|asynchronous)
      *
      * @param  {Function|*} callback - optional, function(is)
@@ -179,9 +179,9 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
      */
     isUser() {
       return Auth.hasRole
-        .apply(Auth, [].concat.apply(['user'], arguments));
+        .apply(Auth, [].concat.apply(['employee'], arguments));
     },
-    
+
     /**
      * Get auth token
      *

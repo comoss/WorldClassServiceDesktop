@@ -15,7 +15,7 @@ app.controller('CSCtrl', ['$scope', '$http', 'Auth', 'User', function ($scope, $
         $scope.master.resolutionStatus = 'unresolved';
         $scope.master.assignedAgent = 'unassigned';
         console.log($scope.customer.file);
-        $http.post('http://localhost:9000/api/WCS/', $scope.master).success(function () {
+        $http.post('/api/WCS/', $scope.master).success(function () {
             alert('Success!');
         }).error(function () {
             alert('Error');

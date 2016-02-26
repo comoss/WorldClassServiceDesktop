@@ -15,7 +15,7 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
 
 
   $scope.gridOptions.columnDefs = [
-    { name:'_id', width:200 },
+    { name:'_id', width:200, enableCellEdit: false },
     { name:'date', cellFilter:'date', width:150, type:'date', enableFiltering:true, enableCellEdit: false },
     { name:'name', width:150 },
     { name:'email', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><a href="mailto:{{COL_FIELD}}">{{COL_FIELD}}</a></div>'},
@@ -33,12 +33,10 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
     // { name:'file', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"></div>'},
   ];
 
-  // field:'isActive',
-
   $scope.refreshData = function(){
     $scope.myData = [];
 
-      $http.get('http://localhost:9000/api/WCS/')
+      $http.get('/api/WCS/')
         .success(function(data) {
           data.forEach(function(row){
             $scope.myData.push(row);

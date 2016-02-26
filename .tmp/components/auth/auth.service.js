@@ -163,14 +163,14 @@
       },
 
       /**
-       * Check if a user has a user role
+       * Check if a user has been promoted to employee
        *   (synchronous|asynchronous)
        *
        * @param  {Function|*} callback - optional, function(is)
        * @return {Bool|Promise}
        */
       isUser: function isUser() {
-        return Auth.hasRole.apply(Auth, [].concat.apply(['user'], arguments));
+        return Auth.hasRole.apply(Auth, [].concat.apply(['employee'], arguments));
       },
 
       /**

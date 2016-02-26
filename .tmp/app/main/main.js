@@ -11,22 +11,27 @@ angular.module('wcsdesktopApp').config(function ($stateProvider) {
     templateUrl: 'app/main/grid.html',
     controller: 'GridCtrl',
     controllerAs: 'grid',
-    authenticate: 'admin' || 'user'
+    authenticate: 'employee'
   }).state('detail', {
     url: '/detailedView',
     templateUrl: 'app/main/detailedView.html',
     controller: 'detailedCtrl',
     controllerAs: 'detailed view',
-    authenticate: 'admin' || 'user'
+    authenticate: 'employee'
   }).state('customerService', {
     url: '/CS',
     templateUrl: 'app/main/customerService.html',
     controller: 'CSCtrl',
     controllerAs: 'CSCtrl',
-    authenticate: 'admin' || 'user'
+    authenticate: 'employee'
   }).state('404', {
     url: '/404',
     templateUrl: 'app/main/404.html'
+  }).state('welcome', {
+    url: '/welcome',
+    templateUrl: 'app/main/welcome.html',
+    controller: 'welcome',
+    authenticate: 'true'
   }).state('logoutPage', {
     url: '/logout',
     templateUrl: 'app/main/logout.html'

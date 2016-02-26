@@ -29,7 +29,7 @@ var LoginController = (function () {
           password: this.user.password
         }).then(function () {
           // Logged in, redirect to home
-          _this.$state.go('main');
+          _this.$state.go('welcome');
         })['catch'](function (err) {
           _this.errors.other = err.message;
         });

@@ -8,9 +8,9 @@ class MainController {
     this.$http = $http;
     this.awesomeThings = [];
 
-    $http.get('/api/things').then(response => {
-      this.awesomeThings = response.data;
-    });
+    // $http.get('/api/things').then(response => {
+    //   this.awesomeThings = response.data;
+    // });
   }
 
   addThing() {

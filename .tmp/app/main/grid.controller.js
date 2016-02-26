@@ -12,17 +12,15 @@ app.controller('GridCtrl', ['$scope', '$http', '$timeout', '$interval', 'uiGridC
   $scope.gridOptions.paginationPageSizes = [20, 30, 40];
   $scope.gridOptions.paginationPageSize = 20;
 
-  $scope.gridOptions.columnDefs = [{ name: '_id', width: 200 }, { name: 'date', cellFilter: 'date', width: 150, type: 'date', enableFiltering: true, enableCellEdit: false }, { name: 'name', width: 150 }, { name: 'email', width: 150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><a href="mailto:{{COL_FIELD}}">{{COL_FIELD}}</a></div>' }, { name: 'phone', width: 150, enableCellEdit: true }, { name: 'product', width: 150, enableCellEdit: true }, { name: 'company', width: 300, enableCellEdit: true }, { name: 'issue', width: 300, enableCellEdit: true }, { name: 'manufactureDate', width: 300, enableCellEdit: true }, { name: 'resolutionDepartment', width: 300, enableCellEdit: true }, { name: 'notes', width: 300, enableCellEdit: true },
+  $scope.gridOptions.columnDefs = [{ name: '_id', width: 200, enableCellEdit: false }, { name: 'date', cellFilter: 'date', width: 150, type: 'date', enableFiltering: true, enableCellEdit: false }, { name: 'name', width: 150 }, { name: 'email', width: 150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><a href="mailto:{{COL_FIELD}}">{{COL_FIELD}}</a></div>' }, { name: 'phone', width: 150, enableCellEdit: true }, { name: 'product', width: 150, enableCellEdit: true }, { name: 'company', width: 300, enableCellEdit: true }, { name: 'issue', width: 300, enableCellEdit: true }, { name: 'manufactureDate', width: 300, enableCellEdit: true }, { name: 'resolutionDepartment', width: 300, enableCellEdit: true }, { name: 'notes', width: 300, enableCellEdit: true },
   //  working on getting the name to link to the submitters email...
   { name: 'submitter', width: 300, enableCellEdit: true }, { name: 'resolutionStatus', width: 200, type: 'boolean' }, { name: 'assignedAgent', width: 200, type: 'boolean' }];
-
-  // field:'isActive',
 
   // { name:'file', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"></div>'},
   $scope.refreshData = function () {
     $scope.myData = [];
 
-    $http.get('http://localhost:9000/api/WCS/').success(function (data) {
+    $http.get('/api/WCS/').success(function (data) {
       data.forEach(function (row) {
         $scope.myData.push(row);
       });

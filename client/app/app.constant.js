@@ -3,7 +3,7 @@
 
 angular.module('wcsdesktopApp.constants', [])
 
-.constant('appConfig', {userRoles:['guest','user','admin']})
+.constant('appConfig', {userRoles:['user','employee','admin']})
 
 ;
 })(angular);

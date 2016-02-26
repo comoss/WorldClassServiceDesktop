@@ -7,16 +7,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 (function () {
   var MainController = (function () {
     function MainController($http) {
-      var _this = this;
-
       _classCallCheck(this, MainController);
 
       this.$http = $http;
       this.awesomeThings = [];
 
-      $http.get('/api/things').then(function (response) {
-        _this.awesomeThings = response.data;
-      });
+      // $http.get('/api/things').then(response => {
+      //   this.awesomeThings = response.data;
+      // });
     }
 
     _createClass(MainController, [{

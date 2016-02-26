@@ -11,7 +11,7 @@ app.controller('detailedCtrl', ['$scope', '$http', 'Auth', 'updateService', '$wi
   // Pull function
   $scope.getVOC = function () {
     if ($scope.theId.length === 24) {
-      $http.get('http://localhost:9000/api/WCS/' + $scope.theId).success(function (data) {
+      $http.get('/api/WCS/' + $scope.theId).success(function (data) {
         $scope.details = data;
       });
     } else {
