@@ -18,12 +18,12 @@ var WCSSchema = new mongoose.Schema({
   submitterEmail: String,
   submitterPhone: String,
   manufactureDate: String,
-  noticeLabel: String,
+  partNumber: String,
   assignedAgent: String,
-  orderNumber:String,
-  // this doesn not seem to be working, why can't I get it to work? Probably should convert it to a string and then pass it.
-  // seems like I need to upload the file and then convert it to a string.
-  file: { data: Buffer, contentType: String }
+  orderNumber: String,
+  image: String,
+  image0: String,
+  image1: String,
 });
 
 export default mongoose.model('WCS', WCSSchema);

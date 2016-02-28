@@ -19,8 +19,12 @@ class AdminController {
   }
 
   update(User) {
-    User.$update();
-    console.log(User);
+  var r = confirm('Are you sure you want to update this user?');
+    if (r == true) {
+      User.$update();
+    } else {
+    alert('Changes not saved');  
+    }
   }
 }
 

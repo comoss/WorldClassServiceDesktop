@@ -1,46 +1,25 @@
 <navbar></navbar>
 
 <div class="container" ng-controller='detailedCtrl'>
-
-<div>
-  <form >
-    <input ng-model='theId' type='text'>
-    <button type="submit" class="btn btn" ng-click="getVOC()">Search</button>
-    <button type="button" class='btn' ng-click='deleteData()' name="button">Delete</button>
-    <button type="submit" class='btn' ng-click='updateVOC()' name="button">Update</button>
-  </form>
-</div>
 <br>
-<div>
+<div ng-init='getVOC()'>
 <table class="table table-hover table-bordered">
 <h4>Customer Information</h4>
-<!-- <tr>
-  <td >
-     id:
-  </td>
-  <td>
-    {{details._id}}
-  </td>
-</tr> -->
 <tr>
   <td class="col-sm-2">
     Name:
   </td>
   <td>
-    <!-- {{details.name}} -->
     <span class='input' ng-hide="details.name" ng-dblclick="editItem(details)">{{details.name}}</span>
     <input class='input' ng-show="details.name" ng-model="details.name" ng-blur="doneEditing(details)" autofocus />
   </td>
 </tr>
-<tr>
   <tr>
     <td class="col-sm-2">
       Date:
     </td>
     <td>
       {{details.date | date}}
-      <!-- <span class='input' ng-hide="details.date" ng-dblclick="editItem(details)">{{details.name}}</span>
-      <input class='input' ng-show="details.date" ng-model="details.date" ng-blur="doneEditing(details)" autofocus /> -->
     </td>
   </tr>
   <tr>
@@ -48,7 +27,6 @@
     Email:
   </td>
   <td>
-  <!-- {{details.email}} -->
   <span class='input' ng-hide="details.email" ng-dblclick="editItem(details)">{{details.email}}</span>
   <input class='input' ng-show="details.email" ng-model="details.email" ng-blur="doneEditing(details)" autofocus />
   </td>
@@ -58,7 +36,6 @@
     Phone:
   </td>
   <td>
-  <!-- {{details.phone}} -->
   <span class='input' ng-hide="details.phone" ng-dblclick="editItem(details)">{{details.phone}}</span>
   <input class='input' ng-show="details.phone" ng-model="details.phone" ng-blur="doneEditing(details)" autofocus />
   </td>
@@ -68,7 +45,6 @@
     Company:
   </td>
   <td>
-  <!-- {{details.company}} -->
   <span class='input' ng-hide="details.company" ng-dblclick="editItem(details)">{{details.company}}</span>
   <input class='input' ng-show="details.company" ng-model="details.company" ng-blur="doneEditing(details)" autofocus />
   </td>
@@ -79,7 +55,6 @@
       Order Number:
     </td>
     <td>
-    <!-- {{details.company}} -->
     <span class='input' ng-hide="details.orderNumber" ng-dblclick="editItem(details)">{{details.orderNumber}}</span>
     <input class='input' ng-show="details.orderNumber" ng-model="details.orderNumber" ng-blur="doneEditing(details)" autofocus />
     </td>
@@ -92,7 +67,6 @@
     <select class='form-control col-sm-2' ng-model='details.assignedAgent'>
       <option ng-repeat='user in users | orderBy:"name"'>{{user.name}}</option>
     </select>
-  <!-- {{details.agent}} -->
   </td>
 </tr>
 <tr>
@@ -104,7 +78,6 @@
       <option>resolved</option>
       <option>unresolved</option>
     </select>
-  <!-- {{details.resolutionStatus}} -->
   </td>
 </tr>
 </table>
@@ -116,7 +89,6 @@
       Product:
     </td>
     <td>
-    <!-- {{details.product}} -->
     <div>
       <select class='form-control col-sm-10' ng-model="details.product"  required='true' name="product">
         <option>Accessory</option>
@@ -161,19 +133,17 @@
       Manufacture Date:
     </td>
     <td>
-    <!-- {{details.manufactureDate}} -->
     <span class='input' ng-hide="details.manufactureDate" ng-dblclick="editItem(details)">{{details.manufactureDate}}</span>
     <input class='input' ng-show="details.manufactureDate" ng-model="details.manufactureDate" ng-blur="doneEditing(details)" autofocus />
     </td>
   </tr>
   <tr>
     <td>
-      Notice label:
+      Part Number:
     </td>
     <td>
-    <!-- {{details.noticeLabel}} -->
-    <span class='input' ng-hide="details.noticeLabel" ng-dblclick="editItem(details)">{{details.manufactureDate}}</span>
-    <input class='input' ng-show="details.noticeLabel" ng-model="details.noticeLabel" ng-blur="doneEditing(details)" autofocus />
+    <span class='input' ng-hide="details.partNumber" ng-dblclick="editItem(details)">{{details.manufactureDate}}</span>
+    <input class='input' ng-show="details.partNumber" ng-model="details.partNumber" ng-blur="doneEditing(details)" autofocus />
     </td>
   </tr>
   <tr>
@@ -181,7 +151,6 @@
       Notes
     </td>
     <td>
-      <!-- {{details.notes}} -->
       <span class='input' ng-hide="details.notes" ng-dblclick="editItem(details)">{{details.manufactureDate}}</span>
       <textarea class='input' ng-show="details.notes" ng-model="details.notes" ng-blur="doneEditing(details)" autofocus />
     </td>
@@ -206,6 +175,13 @@
     </td>
   </tr>
 </table>
-
 </div>
+
+<div>
+  <form >
+    <button type="button" ng-show='nav.isAdmin()' class='btn' ng-click='deleteData()' name="button">Delete</button>
+    <button type="submit" class='btn' ng-click='updateVOC()' name="button">Update</button>
+  </form>
+</div>
+
 <footer></footer>

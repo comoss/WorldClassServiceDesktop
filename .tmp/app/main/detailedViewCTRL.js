@@ -1,8 +1,5 @@
 'use strict';
-app.controller('detailedCtrl', ['$scope', '$http', 'Auth', 'updateService', '$window', 'User', function ($scope, $http, Auth, updateService, $window, User, data) {
-
-  // Search
-  $scope.theId = '';
+app.controller('detailedCtrl', ['$scope', '$http', 'Auth', 'updateService', '$window', 'User', '$stateParams', function ($scope, $http, Auth, updateService, $window, User, $stateParams, data) {
 
   $scope.details = {};
 
@@ -10,27 +7,21 @@ app.controller('detailedCtrl', ['$scope', '$http', 'Auth', 'updateService', '$wi
 
   // Pull function
   $scope.getVOC = function () {
-    if ($scope.theId.length === 24) {
-      $http.get('/api/WCS/' + $scope.theId).success(function (data) {
-        $scope.details = data;
-      });
-    } else {
-      alert('Please use an existing ID.');
-    }
+    $http.get('/api/WCS/' + $stateParams.id).success(function (data) {
+      $scope.details = data;
+    });
   };
 
   // Put function
   $scope.updateVOC = function () {
-    var $id = $scope.theId;
-    var data = $scope.details;
     updateService.update({ id: $id }, data);
   };
 
   // Delete an array, permission granted when user role is admin.
   $scope.deleteData = function () {
-    if (Auth.getCurrentUser().role === 'admin' && $scope.theId.length === 24) {
+    if (Auth.getCurrentUser().role === 'admin') {
       if ($window.confirm('Really Delete?')) {
-        $http['delete']('http://localhost:9000/api/WCS/' + $scope.theId);
+        $http['delete']('/api/WCS/' + $scope.theId);
       }
     }
   };
@@ -41,7 +32,7 @@ app.controller('detailedCtrl', ['$scope', '$http', 'Auth', 'updateService', '$wi
 
   $scope.doneEditing = function (details) {
     details.editing = false;
-    //dong some background ajax calling for persistence...
+    //doing some background ajax calling for persistence...
   };
 }]);
 //# sourceMappingURL=detailedViewCTRL.js.map

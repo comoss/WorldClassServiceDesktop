@@ -7,19 +7,19 @@ angular.module('wcsdesktopApp').config(function ($stateProvider) {
     controller: 'MainController',
     controllerAs: 'main'
   }).state('grid', {
-    url: '/master',
+    url: '/main-view',
     templateUrl: 'app/main/grid.html',
     controller: 'GridCtrl',
     controllerAs: 'grid',
     authenticate: 'employee'
   }).state('detail', {
-    url: '/detailedView',
+    url: '/detailed-view/{id}',
     templateUrl: 'app/main/detailedView.html',
     controller: 'detailedCtrl',
     controllerAs: 'detailed view',
     authenticate: 'employee'
   }).state('customerService', {
-    url: '/CS',
+    url: '/customer-service',
     templateUrl: 'app/main/customerService.html',
     controller: 'CSCtrl',
     controllerAs: 'CSCtrl',

@@ -1,6 +1,9 @@
 'use strict';
-app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGridConstants', 'uiGridGroupingConstants', 'Auth',
- function ($scope, $http, $timeout, $interval, uiGridConstants, uiGridGroupingConstants, Auth) {
+app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGridConstants', 'uiGridGroupingConstants', 'Auth', '$state', '$stateParams', '$rootScope',
+ function ($scope, $http, $timeout, $interval, uiGridConstants, uiGridGroupingConstants, Auth, $state, $stateParams, $rootScope) {
+
+ $rootScope.$state = $state;
+ $rootScope.$stateParams = $stateParams;
 
   $scope.gridOptions = {};
   $scope.gridOptions.data = 'myData';
@@ -12,30 +15,97 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
   $scope.gridOptions.fastWatch = true;
   $scope.gridOptions.paginationPageSizes = [20, 30, 40];
   $scope.gridOptions.paginationPageSize = 20;
-
+  $scope.gridOptions.enableCellSelection = true;
 
   $scope.gridOptions.columnDefs = [
-    { name:'_id', width:200, enableCellEdit: false },
-    { name:'date', cellFilter:'date', width:150, type:'date', enableFiltering:true, enableCellEdit: false },
-    { name:'name', width:150 },
-    { name:'email', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><a href="mailto:{{COL_FIELD}}">{{COL_FIELD}}</a></div>'},
-    { name:'phone', width:150, enableCellEdit: true },
-    { name:'product', width:150, enableCellEdit: true },
-    { name:'company', width:300, enableCellEdit: true },
-    { name:'issue', width:300, enableCellEdit: true },
-    { name:'manufactureDate', width:300, enableCellEdit: true },
-    { name:'resolutionDepartment', width:300, enableCellEdit: true },
-    { name:'notes', width:300, enableCellEdit: true },
-    //  working on getting the name to link to the submitters email...
-    { name:'submitter', width:300, enableCellEdit: true },
-    { name:'resolutionStatus', width:200, type:'boolean'},
-    { name:'assignedAgent', width:200, type:'boolean'},
-    // { name:'file', width:150, enableCellEdit: true, cellTemplate: '<div class="ui-grid-cell-contents"><img src="{{COL_FIELD}}"></div>'},
+    {
+      name:'_id',
+      width: 215,
+      enableCellEdit: false,
+      cellTemplate: '<div ui-sref="detail({ id: row.entity._id })" class="ui-grid-cell-contents">{{COL_FIELD}}</div>'
+    },
+    {
+      name:'date',
+      cellFilter:'date',
+      width:110, type:'date',
+      enableFiltering:true,
+      enableCellEdit: false
+    },
+    {
+      name:'name',
+      width:150,
+      enableCellEdit: false
+    },
+    {
+      name:'email',
+      width:200,
+      enableCellEdit: false,
+      cellTemplate: '<div class="ui-grid-cell-contents"><a href="mailto:{{COL_FIELD}}">{{COL_FIELD}}</a></div>'
+    },
+    {
+      name:'phone',
+      width:120,
+      enableCellEdit: false
+    },
+    {
+      name:'orderNumber',
+      width:100,
+      enableCellEdit: false
+    },
+    {
+      name:'product',
+      width:120,
+      enableCellEdit: false
+    },
+    {
+      name:'company',
+      width:200,
+      enableCellEdit: false
+    },
+    {
+      name:'issue',
+      width:120,
+      enableCellEdit: false
+    },
+    {
+      name:'manufactureDate',
+      width:100,
+      enableCellEdit: false
+    },
+    {
+      name:'partNumber',
+      width:100,
+      enableCellEdit: false
+    },
+    {
+      name:'resolutionDepartment',
+      width:200,
+      enableCellEdit: false
+    },
+    {
+      name:'notes',
+      width:300,
+      enableCellEdit: false
+    },
+    {
+      name:'submitter',
+      width:125,
+      cellTemplate: '<div class="ui-grid-cell-contents"><a href="mailto:{{row.entity.submitterEmail}}">{{COL_FIELD}}</a></div>'
+    },
+    {
+      name:'resolutionStatus',
+      width:120, type:'boolean',
+      enableCellEdit: false
+    },
+    {
+      name:'assignedAgent',
+      width:120,
+      type:'boolean',
+      enableCellEdit: false},
   ];
 
-  $scope.refreshData = function(){
+  $scope.refreshData = function() {
     $scope.myData = [];
-
       $http.get('/api/WCS/')
         .success(function(data) {
           data.forEach(function(row){
@@ -43,4 +113,5 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
           });
         });
   };
+
 }]);
