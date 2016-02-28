@@ -19,12 +19,6 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
 
   $scope.gridOptions.columnDefs = [
     {
-      name:'_id',
-      width: 215,
-      enableCellEdit: false,
-      cellTemplate: '<div ui-sref="detail({ id: row.entity._id })" class="ui-grid-cell-contents">{{COL_FIELD}}</div>'
-    },
-    {
       name:'date',
       cellFilter:'date',
       width:110, type:'date',
@@ -34,7 +28,8 @@ app.controller('GridCtrl',  ['$scope', '$http', '$timeout', '$interval', 'uiGrid
     {
       name:'name',
       width:150,
-      enableCellEdit: false
+      enableCellEdit: false,
+      cellTemplate: '<div ui-sref="detail({ id: row.entity._id })" class="ui-grid-cell-contents">{{COL_FIELD}}</div>'
     },
     {
       name:'email',

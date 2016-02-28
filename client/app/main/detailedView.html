@@ -10,8 +10,7 @@
     Name:
   </td>
   <td>
-    <span class='input' ng-hide="details.name" ng-dblclick="editItem(details)">{{details.name}}</span>
-    <input class='input' ng-show="details.name" ng-model="details.name" ng-blur="doneEditing(details)" autofocus />
+    <input class='input' ng-model="details.name" ng-blur="doneEditing(details)" autofocus />
   </td>
 </tr>
   <tr>
@@ -27,8 +26,7 @@
     Email:
   </td>
   <td>
-  <span class='input' ng-hide="details.email" ng-dblclick="editItem(details)">{{details.email}}</span>
-  <input class='input' ng-show="details.email" ng-model="details.email" ng-blur="doneEditing(details)" autofocus />
+  <input class='input' ng-model="details.email" ng-blur="doneEditing(details)" autofocus />
   </td>
 </tr>
 <tr>
@@ -36,8 +34,7 @@
     Phone:
   </td>
   <td>
-  <span class='input' ng-hide="details.phone" ng-dblclick="editItem(details)">{{details.phone}}</span>
-  <input class='input' ng-show="details.phone" ng-model="details.phone" ng-blur="doneEditing(details)" autofocus />
+  <input class='input' ng-model="details.phone" ng-blur="doneEditing(details)" autofocus />
   </td>
 </tr>
 <tr>
@@ -45,8 +42,7 @@
     Company:
   </td>
   <td>
-  <span class='input' ng-hide="details.company" ng-dblclick="editItem(details)">{{details.company}}</span>
-  <input class='input' ng-show="details.company" ng-model="details.company" ng-blur="doneEditing(details)" autofocus />
+  <input class='input' ng-model="details.company" ng-blur="doneEditing(details)" autofocus />
   </td>
 </tr>
 <tr>
@@ -55,8 +51,7 @@
       Order Number:
     </td>
     <td>
-    <span class='input' ng-hide="details.orderNumber" ng-dblclick="editItem(details)">{{details.orderNumber}}</span>
-    <input class='input' ng-show="details.orderNumber" ng-model="details.orderNumber" ng-blur="doneEditing(details)" autofocus />
+    <input class='input' ng-model="details.orderNumber" ng-blur="doneEditing(details)" autofocus />
     </td>
   </tr>
   <tr>
@@ -133,8 +128,7 @@
       Manufacture Date:
     </td>
     <td>
-    <span class='input' ng-hide="details.manufactureDate" ng-dblclick="editItem(details)">{{details.manufactureDate}}</span>
-    <input class='input' ng-show="details.manufactureDate" ng-model="details.manufactureDate" ng-blur="doneEditing(details)" autofocus />
+    <input class='input' ng-model="details.manufactureDate" ng-blur="doneEditing(details)" autofocus />
     </td>
   </tr>
   <tr>
@@ -142,8 +136,7 @@
       Part Number:
     </td>
     <td>
-    <span class='input' ng-hide="details.partNumber" ng-dblclick="editItem(details)">{{details.manufactureDate}}</span>
-    <input class='input' ng-show="details.partNumber" ng-model="details.partNumber" ng-blur="doneEditing(details)" autofocus />
+    <input class='input' ng-model="details.partNumber" ng-blur="doneEditing(details)" autofocus />
     </td>
   </tr>
   <tr>
@@ -151,9 +144,33 @@
       Notes
     </td>
     <td>
-      <span class='input' ng-hide="details.notes" ng-dblclick="editItem(details)">{{details.manufactureDate}}</span>
-      <textarea class='input' ng-show="details.notes" ng-model="details.notes" ng-blur="doneEditing(details)" autofocus />
+      <textarea class='input' ng-model="details.notes" ng-blur="doneEditing(details)" autofocus />
     </td>
+  </tr>
+  <tr>
+    <td>
+      Image
+    </td>
+    <td>
+      <img ng-src="{{details.image}}" alt="No images were submitted" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Image
+    </td>
+    <td>
+      <img ng-src="{{details.image0}}" alt="No images were submitted" />
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Image
+    </td>
+    <td>
+      <img ng-src="{{details.image1}}" alt="No images were submitted" />
+    </td>
+  </tr>
 </table>
 
 <table class="table table-bordered table-hover">

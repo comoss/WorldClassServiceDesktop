@@ -9,7 +9,7 @@
       <form class="form" name="form" ng-submit="vm.register(form)" novalidate>
 
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted, 'has-error': form.name.$invalid && vm.submitted }">
-          <label>Name</label>
+          <label>First and Last Name</label>
           <input type="text" name="name" class="form-control" ng-model="vm.user.name" required/>
           <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
             A name is required
