@@ -33,7 +33,7 @@ var SignupController = (function () {
           password: this.user.password
         }).then(function () {
           // Account created, redirect to home
-          _this.$state.go('main');
+          _this.$state.go('welcomePage');
         })['catch'](function (err) {
           err = err.data;
           _this.errors = {};

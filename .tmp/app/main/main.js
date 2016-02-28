@@ -27,7 +27,7 @@ angular.module('wcsdesktopApp').config(function ($stateProvider) {
   }).state('404', {
     url: '/404',
     templateUrl: 'app/main/404.html'
-  }).state('welcome', {
+  }).state('welcomePage', {
     url: '/welcome',
     templateUrl: 'app/main/welcome.html',
     controller: 'welcome',

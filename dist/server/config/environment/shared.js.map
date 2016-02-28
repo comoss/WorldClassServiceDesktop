@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../server/config/environment/shared.js"],"names":[],"mappings":"AAAA,YAAY,CAAC;;AAEb,OAAO,GAAG,MAAM,CAAC,OAAO,GAAG;;AAEzB,WAAS,EAAE,CAAC,MAAM,EAAE,UAAU,EAAE,OAAO,CAAC;CACzC,CAAC","file":"shared.js","sourcesContent":["'use strict';\n\nexports = module.exports = {\n  // List of user roles\n  userRoles: ['user', 'employee', 'admin']\n};\n"]}

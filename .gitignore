@@ -1,5 +1,3 @@
-node_modules
-bower_components
 .DS_Store
-local.env.sample.js
-local.env.js
+bower_components
+node_modules

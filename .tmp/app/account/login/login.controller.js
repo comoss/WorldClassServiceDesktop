@@ -28,8 +28,8 @@ var LoginController = (function () {
           email: this.user.email,
           password: this.user.password
         }).then(function () {
-          // Logged in, redirect to home
-          _this.$state.go('welcome');
+          // Logged in, redirect to welcome
+          _this.$state.go('welcomePage');
         })['catch'](function (err) {
           _this.errors.other = err.message;
         });

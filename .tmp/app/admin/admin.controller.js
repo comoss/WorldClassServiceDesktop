@@ -17,7 +17,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: 'delete',
       value: function _delete(user) {
         var r = confirm('Are you sure you want to delete this user?');
-        if (r == true) {
+        if (r === true) {
           user.$remove();
           this.users.splice(this.users.indexOf(user), 1);
         } else {
@@ -28,7 +28,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: 'update',
       value: function update(User) {
         var r = confirm('Are you sure you want to update this user?');
-        if (r == true) {
+        if (r === true) {
           User.$update();
         } else {
           alert('Changes not saved');

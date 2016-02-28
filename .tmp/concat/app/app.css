@@ -1,0 +1,200 @@
+
+/**
+ * Bootstrap Fonts
+ */
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot');
+  src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'),
+  url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+/**
+ *Font Awesome Fonts
+ */
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.1.0');
+  src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
+  url('../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),
+  url('../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
+  url('../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**
+ * App-wide Styles
+ */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.trash { color:rgb(209, 91, 71); }
+
+.user-list li {
+	display: flex;
+	border: none;
+	border-bottom: 1px lightgray solid;
+	margin-bottom: 0;
+}
+.user-list li:last-child {
+	border-bottom: none;
+}
+.user-list li .user-info {
+	flex-grow: 1;
+}
+.user-list li .trash {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+.padding{
+	display: inline-block;
+	margin: 3em 1em 0em 1em;
+}
+.search{
+	float: right;
+	display: inline-block;
+}
+/**{
+	border: 1px solid red !important;
+}*/
+
+#background {
+ background: red; /* For browsers that do not support gradients */
+ background: -webkit-radial-gradient(left, #f9461c, #1E1E1E); /* For Safari 5.1 to 6.0 */
+ background: -o-radial-gradient(right, #f9461c, #1E1E1E); /* For Opera 11.1 to 12.0 */
+ background: -moz-radial-gradient(right, #f9461c, #1E1E1E); /* For Firefox 3.6 to 15 */
+ background: radial-gradient(to right, #f9461c, #1E1E1E); /* Standard syntax */
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ right: 0;
+ top: 0;
+ padding: 6.5em;
+}
+
+.welcomeMessage {
+  color: white;
+}
+
+.thing-form {
+  margin: 20px 0;
+}
+
+#banner {
+  border-bottom: none;
+  margin-top: -20px;
+}
+
+#banner h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.hero-unit {
+  position: relative;
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background: #F9461C;
+}
+
+.navbar-text {
+  margin-left: 15px;
+}
+
+.grid {
+  width: 80%;
+  height: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.margin {
+  margin-left: 10%;
+}
+
+.CSheader {
+  text-align: center;
+}
+
+#textAreaInput {
+  height: 150px;
+}
+
+.input:focus {
+    //change more attributes, if you want.
+}
+
+.input {
+    border:none;
+    background-color:transparent;
+    height:100%;
+    width: 100%;
+}
+
+.required:before {
+  content:"* " ;
+  color:red;
+}
+
+.authorization {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60%;
+  text-align: center;
+}
+
+.preventingImg{
+  max-width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mainHeader {
+  font-family: sans-serif;
+}
+
+footer.footer {
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 85px;
+  border-top: 1px solid #E5E5E5;
+}
+
+.modal-primary .modal-header,
+.modal-info .modal-header,
+.modal-success .modal-header,
+.modal-warning .modal-header,
+.modal-danger .modal-header {
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+}
+.modal-primary .modal-header {
+  background: #428bca;
+}
+.modal-info .modal-header {
+  background: #5bc0de;
+}
+.modal-success .modal-header {
+  background: #5cb85c;
+}
+.modal-warning .modal-header {
+  background: #f0ad4e;
+}
+.modal-danger .modal-header {
+  background: #d9534f;
+}
